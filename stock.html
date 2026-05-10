@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Casablanca Stock Analyzer — Detalle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stock.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">◈</span>
+      <span class="brand-name">CASA<span class="brand-accent">BOURSE</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Mercado</a></li>
+      <li><a href="stock.html" class="active">Análisis</a></li>
+      <li><a href="#">Comparar</a></li>
+      <li><a href="#">Watchlist</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="market-status"><span class="dot"></span>Mercado abierto</span>
+      <a href="#" class="btn-nav">Acceder</a>
+    </div>
+  </nav>
+
+  <div class="stock-page">
+
+    <div class="container">
+
+      <div class="stock-header">
+        <a href="index.html" class="back-btn">← Volver al mercado</a>
+        <div class="ticker-selector">
+          <label>Empresa</label>
+          <select id="tickerSelect">
+            <option value="IAM">IAM — Maroc Telecom</option>
+            <option value="ATW">ATW — Attijariwafa Bank</option>
+            <option value="BCP">BCP — Banque Centrale Populaire</option>
+            <option value="CIH">CIH — CIH Bank</option>
+            <option value="LBV">LBV — Label Vie</option>
+            <option value="MNG">MNG — Managem</option>
+            <option value="TQM">TQM — Taqa Morocco</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="company-hero">
+        <div class="company-info">
+          <div class="company-badge" id="companyBadge">IAM</div>
+          <div>
+            <h1 class="company-name" id="companyName">Maroc Telecom</h1>
+            <p class="company-sector" id="companySector">Telecomunicaciones</p>
+          </div>
+        </div>
+        <div class="company-price">
+          <span class="price-value" id="currentPrice">—</span>
+          <span class="price-currency">MAD</span>
+          <span class="price-change" id="priceChange">—</span>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="kpi-label">Precio Inicial 2024</div>
+          <div class="kpi-value" id="kpiOpen">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Precio Final 2024</div>
+          <div class="kpi-value" id="kpiClose">—</div>
+        </div>
+        <div class="kpi kpi--highlight">
+          <div class="kpi-label">ROI 2024</div>
+          <div class="kpi-value" id="kpiROI">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Precio Máximo</div>
+          <div class="kpi-value" id="kpiHigh">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Precio Mínimo</div>
+          <div class="kpi-value" id="kpiLow">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Volatilidad</div>
+          <div class="kpi-value" id="kpiVol">—</div>
+        </div>
+      </div>
+
+      <div class="chart-block">
+        <div class="chart-block-header">
+          <h2 class="section-title">Evolución del precio</h2>
+          <div class="ma-legend">
+            <span class="legend-dot" style="background:#00c896"></span> Precio cierre
+            <span class="legend-dot" style="background:#f59e0b; margin-left:16px"></span> Media móvil 20 días
+          </div>
+        </div>
+        <div class="chart-wrap" style="height:400px">
+          <canvas id="stockChart"></canvas>
+        </div>
+      </div>
+
+      <div class="table-block">
+        <div class="table-block-header">
+          <h2 class="section-title">Datos diarios</h2>
+          <span class="table-count" id="tableCount"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="stocks-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Apertura</th>
+                <th>Máximo</th>
+                <th>Mínimo</th>
+                <th>Cierre</th>
+                <th>Volumen</th>
+                <th>Variación</th>
+              </tr>
+            </thead>
+            <tbody id="dailyTableBody">
+              <tr><td colspan="7" class="loading-row">Cargando datos...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="nav-brand" style="justify-content:center; margin-bottom:12px;">
+        <span class="brand-icon">◈</span>
+        <span class="brand-name">CASA<span class="brand-accent">BOURSE</span></span>
+      </div>
+      <p class="footer-text">Proyecto académico — DAW · ITP Granada · 2026</p>
+    </div>
+  </footer>
+
+  <script src="js/stock.js"></script>
+</body>
+</html>
