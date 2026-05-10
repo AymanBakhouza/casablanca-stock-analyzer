@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Casablanca Stock Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">◈</span>
+      <span class="brand-name">CASA<span class="brand-accent">BOURSE</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Mercado</a></li>
+      <li><a href="stock.html">Análisis</a></li>
+      <li><a href="#">Comparar</a></li>
+      <li><a href="#">Watchlist</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="market-status"><span class="dot"></span>Mercado abierto</span>
+      <a href="#" class="btn-nav">Acceder</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Bourse de Casablanca · CSE</p>
+      <h1 class="hero-title">ANALIZA LA<br><span class="hero-highlight">BOLSA MARROQUÍ</span><br>EN TIEMPO REAL</h1>
+      <p class="hero-subtitle">Seguimiento de precios, análisis técnico y predicciones para las principales empresas cotizadas en la Bolsa de Casablanca.</p>
+      <div class="hero-actions">
+        <a href="stock.html" class="btn-primary">Ver Análisis →</a>
+        <a href="#mercado" class="btn-ghost">Explorar mercado</a>
+      </div>
+    </div>
+    <div class="hero-chart-preview">
+      <canvas id="heroMiniChart"></canvas>
+    </div>
+  </section>
+
+  <section class="market-summary" id="mercado">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Resumen del Mercado</h2>
+        <span class="section-date" id="fechaHoy"></span>
+      </div>
+      <div class="cards-grid">
+        <div class="card card--green">
+          <div class="card-icon">🏢</div>
+          <div class="card-value" data-count="7">0</div>
+          <div class="card-label">Empresas cotizadas</div>
+          <div class="card-sub">Analizadas en este proyecto</div>
+        </div>
+        <div class="card card--blue">
+          <div class="card-icon">📈</div>
+          <div class="card-value" id="bestStock">—</div>
+          <div class="card-label">Mejor rendimiento</div>
+          <div class="card-sub" id="bestReturn">ROI 2024</div>
+        </div>
+        <div class="card card--amber">
+          <div class="card-icon">⚡</div>
+          <div class="card-value" id="avgPrice">—</div>
+          <div class="card-label">Precio promedio</div>
+          <div class="card-sub">Media del mercado (MAD)</div>
+        </div>
+        <div class="card card--purple">
+          <div class="card-icon">📊</div>
+          <div class="card-value" id="totalRows">—</div>
+          <div class="card-label">Registros totales</div>
+          <div class="card-sub">Días × Empresas 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chart-section">
+    <div class="container">
+      <div class="chart-header">
+        <h2 class="section-title">Evolución de Precios 2024</h2>
+        <div class="chart-controls">
+          <button class="chip active" data-ticker="IAM">IAM</button>
+          <button class="chip" data-ticker="ATW">ATW</button>
+          <button class="chip" data-ticker="BCP">BCP</button>
+          <button class="chip" data-ticker="CIH">CIH</button>
+          <button class="chip" data-ticker="LBV">LBV</button>
+          <button class="chip" data-ticker="MNG">MNG</button>
+          <button class="chip" data-ticker="TQM">TQM</button>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="mainChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="stocks-section">
+    <div class="container">
+      <h2 class="section-title">Todas las Empresas</h2>
+      <div class="table-wrap">
+        <table class="stocks-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Empresa</th>
+              <th>Ticker</th>
+              <th>Sector</th>
+              <th>Precio Inicial</th>
+              <th>Precio Final</th>
+              <th>ROI 2024</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="stocksTableBody">
+            <tr><td colspan="8" class="loading-row">Cargando datos...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="nav-brand" style="justify-content:center; margin-bottom:12px;">
+        <span class="brand-icon">◈</span>
+        <span class="brand-name">CASA<span class="brand-accent">BOURSE</span></span>
+      </div>
+      <p class="footer-text">Proyecto académico — DAW · ITP Granada · 2026</p>
+      <p class="footer-text">Datos simulados basados en precios reales de la Bolsa de Casablanca</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
