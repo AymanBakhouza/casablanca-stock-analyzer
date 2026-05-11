@@ -1,5 +1,7 @@
 # 📊 Casablanca Stock Analyzer
 
+🌐 **Live Demo:** https://aymanbakhouza.github.io/casablanca-stock-analyzer
+
 Web application to analyze and visualize stock data from the **Casablanca Stock Exchange (CSE)**.
 
 ## 🚀 Features
