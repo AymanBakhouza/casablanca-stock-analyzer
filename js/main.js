@@ -20,7 +20,7 @@ const SECTORS = {
 };
 
 async function loadCSV() {
-  const response = await fetch('data/stocks.csv');
+  const response = await fetch('http://127.0.0.1:5000/api/stocks');
   const text = await response.text();
   const rows = text.trim().split('\n');
   const headers = rows[0].split(',');
