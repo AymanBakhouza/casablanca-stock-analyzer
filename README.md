@@ -34,3 +34,4 @@ Una aplicación web profesional para analizar y visualizar datos de la **Bolsa d
 ## 🚀 Cómo Usar
 
 ### Frontend (GitHub Pages)
+
