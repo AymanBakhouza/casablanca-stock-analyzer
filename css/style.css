@@ -433,3 +433,88 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .card:nth-child(2) { animation-delay: 0.2s; }
 .card:nth-child(3) { animation-delay: 0.3s; }
 .card:nth-child(4) { animation-delay: 0.4s; }
+
+.compare-section {
+  padding: 40px 20px;
+}
+
+.compare-controls {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.compare-controls select {
+  padding: 10px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: white;
+  border-radius: 5px;
+}
+
+.compare-table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+}
+
+.compare-table th, .compare-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.compare-table th {
+  background: var(--bg-2);
+  font-weight: bold;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.compare-section h1 {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 2.5rem;
+}
+
+.compare-controls {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.compare-controls select {
+  padding: 12px 20px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.compare-table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+}
+
+.compare-table th, .compare-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.compare-table th {
+  background: var(--bg-2);
+  font-weight: bold;
+  color: var(--green);
+}
